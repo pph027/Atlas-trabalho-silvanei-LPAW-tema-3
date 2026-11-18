@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore os mistérios do universo no Cosmic Atlas.">
+  <title>Cosmic Atlas — Arquivo do Universo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a href="#" class="brand">
+      <span class="brand-mark">✳</span>
+      COSMIC<span class="brand-light">ATLAS</span>
+    </a>
+
+    <nav>
+      <a href="#explore">Explorar</a>
+      <a href="#about">Sobre o arquivo</a>
+    </nav>
+
+    <button class="saved-button" id="favoritesToggle">
+      ♡ <span>Salvos</span>
+      <b id="favoritesCount">0</b>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="hero">
+
+      <div class="hero-kicker">
+        <span class="live-dot"></span>
+        ARQUIVO CELESTE · VOL. 01
+      </div>
+
+      <h1>
+        Uma pequena<br>
+        <em>janela</em> para o infinito.
+      </h1>
+
+      <p class="hero-copy">
+        Curiosidades, mundos e fenômenos extraordinários.<br>
+        O universo é grande demais para ficar só olhando.
+      </p>
+
+      <a class="explore-cta" href="#explore">
+        INICIAR EXPLORAÇÃO <span>↘</span>
+      </a>
+
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="planet planet-main"></div>
+        <div class="planet planet-small"></div>
+        <div class="star star-a">✦</div>
+        <div class="star star-b">✧</div>
+        <div class="star star-c">·</div>
+      </div>
+
+      <div class="hero-meta">
+        <span>LAT. 00° 00' 00"</span>
+        <span>OBSERVANDO DESDE 2026</span>
+      </div>
+
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="explorer" id="explore">
+
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">01 / BANCO DE DADOS</div>
+          <h2>O que existe lá fora?</h2>
+        </div>
+
+        <p>
+          Encontre seu próximo destino<br>
+          entre as estrelas.
+        </p>
+      </div>
+
+      <!-- BUSCA -->
+      <div class="toolbar">
+
+        <label class="search-box">
+          <span>⌕</span>
+
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Buscar objeto celeste..."
+            aria-label="Buscar objeto celeste"
+          >
+
+          <kbd>⌘ K</kbd>
+        </label>
+
+        <!-- FILTROS -->
+        <div class="filters" id="categoryFilters">
+
+          <button class="filter active" data-category="Todos">
+            Todos
+          </button>
+
+          <button class="filter" data-category="Planeta">
+            Planetas
+          </button>
+
+          <button class="filter" data-category="Estrela">
+            Estrelas
+          </button>
+
+          <button class="filter" data-category="Nebulosa">
+            Nebulosas
+          </button>
+
+          <button class="filter" data-category="Galáxia">
+            Galáxias
+          </button>
+
+        </div>
+      </div>
+
+      <div class="result-line">
+        <span id="resultCount">08 OBJETOS ENCONTRADOS</span>
+        <span>CATÁLOGO ASTRONÔMICO</span>
+      </div>
+
+      <!-- CARDS GERADOS PELO JAVASCRIPT -->
+      <div class="object-grid" id="objectGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        Não encontramos nada por aqui. Tente outra busca.
+      </div>
+
+    </section>
+
+    <!-- SOBRE -->
+    <section class="about" id="about">
+
+      <div class="about-symbol">✳</div>
+
+      <div>
+        <div class="eyebrow">02 / SOBRE O PROJETO</div>
+
+        <h2>
+          O universo não cabe<br>
+          em uma única página.
+        </h2>
+
+        <p>
+          Este arquivo é um convite para descobrir o espaço.
+          Explore objetos, filtre por categoria e guarde seus
+          favoritos para revisitar quando quiser.
+        </p>
+      </div>
+
+      <div class="about-side">
+        PROJETO EDUCACIONAL<br>
+        HTML · CSS · JAVASCRIPT
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <span>© COSMIC ATLAS 2026</span>
+    <span>FEITO PARA EXPLORADORES CURIOSOS <b>✦</b></span>
+    <a href="#">VOLTAR AO TOPO ↑</a>
+  </footer>
+
+  <!-- JANELA DE DETALHES -->
+  <dialog id="objectDialog" class="object-dialog">
+
+    <button class="dialog-close" id="closeDialog" aria-label="Fechar detalhes">
+      ×
+    </button>
+
+    <div id="dialogContent"></div>
+
+  </dialog>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
